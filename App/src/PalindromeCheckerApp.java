@@ -1,45 +1,26 @@
-/**
- * ================================================================
- * MAIN CLASS - PalindromeCheckerApp
- * ================================================================
- *
- * Use Case 1: Application Entry & Welcome Message
- *
- * Description:
- * This class represents the entry point of the
- * Palindrome Checker Management System.
- *
- * At this stage, the application:
- * - Starts execution from the main() method
- * - Displays a welcome message
- * - Shows application version
- *
- * No palindrome logic is implemented yet.
- *
- * The goal is to establish a clear startup flow.
- *
- * @author Developer
- * @version 1.0
- */
+// Version 2.0
+// Branch: UC2-HardCodePalindrome
+// UseCase: Hardcoded String Palindrome
 
 public class PalindromeCheckerApp {
 
-    /**
-     * Application entry point.
-     *
-     * This is the first method executed by the JVM
-     * when the program starts.
-     *
-     * @param args Command-line arguments
-     */
     public static void main(String[] args) {
 
-        System.out.println("=======================================");
-        System.out.println("PALINDROME CHECKER MANAGEMENT SYSTEM");
-        System.out.println("=======================================");
-        System.out.println("Application Name    : PalindromeCheckerApp");
-        System.out.println("Application Version : 1.0");
-        System.out.println("Status              : System Started Successfully");
-        System.out.println("=======================================");
+        System.out.println("Welcome to Palindrome Checker App");
 
+        String input = "madam";
+        String reversed = "";
+
+        for (int i = input.length() - 1; i >= 0; i--) {
+            reversed = reversed + input.charAt(i);
+        }
+
+        System.out.println("Given String: " + input);
+
+        if (input.equalsIgnoreCase(reversed)) {
+            System.out.println("Result: It is a Palindrome ✅");
+        } else {
+            System.out.println("Result: It is NOT a Palindrome ❌");
+        }
     }
+}
