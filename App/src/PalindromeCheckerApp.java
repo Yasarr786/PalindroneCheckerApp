@@ -1,26 +1,34 @@
-// Version 2.0
-// Branch: UC2-HardCodePalindrome
-// UseCase: Hardcoded String Palindrome
+// Version 3.0
+// Branch: UC3-NumberPalindrome
+// UseCase: Number Palindrome
+
+import java.util.Scanner;
 
 public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
+        Scanner scanner = new Scanner(System.in);
+
         System.out.println("Welcome to Palindrome Checker App");
+        System.out.print("Enter a number: ");
 
-        String input = "madam";
-        String reversed = "";
+        int number = scanner.nextInt();
+        int originalNumber = number;
+        int reversedNumber = 0;
 
-        for (int i = input.length() - 1; i >= 0; i--) {
-            reversed = reversed + input.charAt(i);
+        while (number != 0) {
+            int digit = number % 10;
+            reversedNumber = reversedNumber * 10 + digit;
+            number = number / 10;
         }
 
-        System.out.println("Given String: " + input);
-
-        if (input.equalsIgnoreCase(reversed)) {
-            System.out.println("Result: It is a Palindrome ✅");
+        if (originalNumber == reversedNumber) {
+            System.out.println("Result: It is a Palindrome Number ✅");
         } else {
-            System.out.println("Result: It is NOT a Palindrome ❌");
+            System.out.println("Result: It is NOT a Palindrome Number ❌");
         }
+
+        scanner.close();
     }
 }
